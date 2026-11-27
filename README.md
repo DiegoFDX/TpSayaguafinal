@@ -18,8 +18,5 @@ Todos deben usar el mismo token. Por defecto se usa un token de práctica (`TP-S
 ## Prueba de carga local
 `dotnet run -- loadtest 127.0.0.1 8080 20` realiza un máximo de 20 intentos de conexión secuenciales y los cierra. Úsalo únicamente en tu propia máquina o entorno autorizado.
 
-## Capturas
-Ver [CAPTURAS.md](CAPTURAS.md). La guía explica qué evidencia real obtener. Wireshark podrá mostrar tráfico cifrado de aplicación tras autenticación, pero los metadatos TCP siguen siendo visibles.
-
 ## Limitaciones
 Este proyecto no implementa TLS con certificados: AES-GCM protege los mensajes de aplicación, pero la autenticación inicial por token se transmite en texto y la clave se deriva del token compartido. Para redes no confiables se recomienda TLS y un mecanismo de autenticación más robusto. La prueba de carga está limitada a 20 conexiones y es local/experimental.
